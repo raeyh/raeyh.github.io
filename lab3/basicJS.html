@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Scope, Closure and Encapsulation</title>
+    <script>
+//Question 1
+
+function max(n1, n2) {
+  if (n1 > n2) return n1;
+  else return n2;
+}
+console.log(max(1, 2));
+
+//Question 2
+function maxOfThree(n1, n2, n3) {
+  if (n1 > n2 && n1 > n3) return n1;
+  else if (n2 > n1 && n2 > n3) return n2;
+  else return n3;
+}
+console.log(maxOfThree(1, 2, 3));
+
+//Question 3
+function isVowel(x) {
+  var listOfVowels = "aAeEiIoOuU";
+  return x.length == 1 && listOfVowels.indexOf(x) > -1;
+}
+console.log(isVowel("a"));
+
+//Question 4
+function sum(array) {
+  var result = 0;
+  for (let index = 0; index < array.length; index++) {
+    result += array[index];
+  }
+  return result;
+}
+console.log(sum([1, 2, 3]));
+
+function multiply(array) {
+  var result = null;
+  if (array.length >= 1) {
+    result = array[0];
+    for (let index = 1; index < array.length; index++) {
+      result *= array[index];
+    }
+  }
+  return result;
+}
+console.log(multiply([1, 2, 3]));
+
+//Question 5
+function reverse(string) {
+  var result = "";
+  for (let index = string.length - 1; index >= 0; index--) {
+    result += string[index];
+  }
+  return result;
+}
+console.log(reverse("abcde"));
+
+//Question 6
+function findLongestWord(array) {
+  var longest = 0;
+  for (let index = 0; index < array.length; index++) {
+    if (longest < array[index].length) longest = array[index].length;
+  }
+  return longest;
+}
+console.log(findLongestWord(["a", "ab", "abc", "abcd", "abcde"]));
+
+//Question 7
+function filterLongWords(array, wordSize) {
+  var newArray = [];
+  for (let index = 0; index < array.length; index++) {
+    if (array[index].length > wordSize)
+      newArray[newArray.length++] = array[index];
+  }
+  return newArray;
+}
+console.log(filterLongWords(["a", "ab", "abc", "abcd", "abcde"], 3));
+</script>
+</head>
+
+<body>
+  <p>Look in the Chrome developer console to see the output. CTRL_SHIFT_J</p>
+</body>
+</html>
